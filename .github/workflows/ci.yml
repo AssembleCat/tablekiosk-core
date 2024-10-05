@@ -2,7 +2,7 @@ name: deploy
 
 on:
   push:
-    branches: [ 'production' ]
+    branches: ['production']
 
 env:
   DOCKER_NAMESPACE: 'titibebe'
@@ -52,9 +52,11 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
         with:
+          context: .
           push: true
           tags: ${{ env.DOCKER_NAMESPACE }}/${{ env.IMAGE_NAME }}:latest
+          file: ./Dockerfile
           build-args: |
-            JAR_FILE=application.jar
+            JAR_FILE=application.jar  # JAR 파일의 이름을 빌드 시 넘김
           secrets: |
             GIT_AUTH_TOKEN=${{ secrets.GIT_ACCESS_TOKEN }}
