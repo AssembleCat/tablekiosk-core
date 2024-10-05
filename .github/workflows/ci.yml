@@ -54,9 +54,8 @@ jobs:
         with:
           push: true
           tags: ${{ env.DOCKER_NAMESPACE }}/${{ env.IMAGE_NAME }}:latest
-          context: .
           file: Dockerfile
           build-args: |
-            JAR_FILE=application.jar  # JAR 파일의 이름을 빌드 시 넘김
+            JAR_FILE=application.jar
           secrets: |
             GIT_AUTH_TOKEN=${{ secrets.GIT_ACCESS_TOKEN }}
