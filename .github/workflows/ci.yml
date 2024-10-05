@@ -5,8 +5,8 @@ on:
     branches: ['production']
 
 env:
-  REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
+  DOCKER_NAMESPACE: 'titibebe'
+  IMAGE_NAME: 'tablekiosk'
   JAVA_VERSION: '21'
 
 jobs:
@@ -30,7 +30,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:latest
+          tags: ${{ env.DOCKER_NAMESPACE }}/${{ env.IMAGE_NAME }}:latest
   deploy-core:
     runs-on: ubuntu-latest
     needs: ['build-and-push-image']
