@@ -5,7 +5,7 @@ on:
     branches: ['production']
 
 jobs:
-  build:
+  deploy-core:
     runs-on: ubuntu-latest
     steps:
       -
@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v4
       -
         name: Setup Java 21
-        uses: actions/setup-java@4
+        uses: actions/setup-java@v4
         with:
           distribution: 'corretto'
           java-version: '21'
