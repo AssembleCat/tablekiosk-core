@@ -55,7 +55,6 @@ jobs:
           context: .
           push: true
           tags: ${{ env.DOCKER_NAMESPACE }}/${{ env.IMAGE_NAME }}:latest
-          file: ./Dockerfile
           build-args: |
             JAR_FILE=application.jar  # JAR 파일의 이름을 빌드 시 넘김
           secrets: |
