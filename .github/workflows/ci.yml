@@ -57,6 +57,6 @@ jobs:
           push: true
           tags: ${{ env.DOCKER_NAMESPACE }}/${{ env.IMAGE_NAME }}:latest
           build-args: |
-            JAR_FILE=./application.jar
+            JAR_FILE=./*.jar
           secrets: |
             GIT_AUTH_TOKEN=${{ secrets.GIT_ACCESS_TOKEN }}
