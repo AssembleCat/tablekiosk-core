@@ -7,9 +7,9 @@ USER root
 ARG JAR_FILE=build/libs/*.jar
 
 # 컨테이너 내부로 복사
-COPY ${JAR_FILE} app.jar
+COPY ${JAR_FILE} app/application.jar
 
 EXPOSE 8080
 
 # 실행! 해당 명령어로 실행된 프로세스가 종료되면 컨테이너도 내려감
-ENTRYPOINT ["java","-jar","/app.jar"]
+ENTRYPOINT ["java","-jar","/app/application.jar"]
