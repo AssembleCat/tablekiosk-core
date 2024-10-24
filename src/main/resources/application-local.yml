@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    base:
+      url: url
+      username: name
+      password: password
+      driver-class-name: driver
+  application:
+    name: tablekiosk-core
