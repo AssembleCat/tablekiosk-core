@@ -1,7 +1,7 @@
 spring:
   datasource:
     base:
-      url: url
+      url: TODO(local db url)
       username: name
       password: password
       driver-class-name: driver
