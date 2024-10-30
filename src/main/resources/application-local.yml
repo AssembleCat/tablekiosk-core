@@ -1,9 +1,13 @@
 spring:
   datasource:
     base:
-      url: TODO(local db url)
-      username: name
-      password: password
-      driver-class-name: driver
+      url: jdbc:postgresql:localhost:5432/tablekiosk
+      username: superuser
+      password: tablekioskpassword
+      driver-class-name: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
   application:
     name: tablekiosk-core
