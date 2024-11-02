@@ -1,3 +1,4 @@
+# postgresql, redis
 spring:
   datasource:
     base:
